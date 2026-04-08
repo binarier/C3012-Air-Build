@@ -115,12 +115,12 @@
         #size-cells = <0>;
 
 
-        dac@48 {
-            /* 使用 ds4424 的驱动逻辑来驱动 ds4412 */
-            compatible = "maxim,ds4424"; 
-            reg = <0x48>;
-            vcc-supply = <&reg_vcc33>; 
-        };
+        // dac@48 {
+        //     /* 使用 ds4424 的驱动逻辑来驱动 ds4412 */
+        //     compatible = "maxim,ds4424"; 
+        //     reg = <0x48>;
+        //     vcc-supply = <&reg_vcc33>; 
+        // };
 };
 
 &spi0 {
