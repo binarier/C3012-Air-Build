@@ -32,6 +32,7 @@
 };
 
 &cvi_vo {
+        status = "disabled";
 #ifndef __UBOOT__
 	/delete-property/ reset-gpio;
 	/delete-property/ pwm-gpio;
@@ -124,11 +125,11 @@
 };
 
 &spi0 {
-	status = "okay";
+	status = "disabled";
 };
 
 &spi1 {
-	status = "disabled";
+	status = "okay";
 };
 
 &spi2 {
@@ -153,6 +154,7 @@
 };
 
 &mipi_rx {
+        status = "disabled";
         snsr-reset = <&porte 1 GPIO_ACTIVE_LOW>;
 };
 

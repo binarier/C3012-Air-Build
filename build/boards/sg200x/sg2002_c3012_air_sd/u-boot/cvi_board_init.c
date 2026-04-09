@@ -127,13 +127,18 @@ int cvi_board_init(void)
         // mmio_write_32(0x0300118C, 0x5); // RX0N CAM_MCLK1 for beta
 
 	// spi1 on mipi csi 
-	/*
 	mmio_write_32(0x0300116C, 0x7); // spi1 clk   GPIOC2 MIPI_RX4N
 	mmio_write_32(0x03001170, 0x7); // spi1 cs    GPIOC3 MIPI_RX4P
 	mmio_write_32(0x03001174, 0x7); // spi1 miso  GPIOC4 MIPI_RX3N
 	mmio_write_32(0x03001178, 0x7); // spi1 mosi  GPIOC5 MIPI_RX3P
-	*/
 	
+        // spi1需要设置mux
+        mmio_write_32(0x03001114, 0x6);
+        mmio_write_32(0x03001118, 0x6);
+        mmio_write_32(0x0300111c, 0x6);
+        mmio_write_32(0x03001120, 0x6);
+
+
 
         // camera/tp i2c
         // mmio_write_32(0x03001090, 0x5); // PWR_GPIO6 IIC4_SCL
@@ -157,16 +162,17 @@ int cvi_board_init(void)
 
         // 计算板用
         // LED_HASH  PIN17, GPIOA_15，不需设置
-        // RESET_HASH PIN80, GPIOC_10，默认gpio
+        // RESET_HASH PIN80, GPIOC_10
+        mmio_write_32(0x0300118C, 0x3);
         // I2C4
         mmio_write_32(0x0300117C, 0x5); // I2C_SCL   PIN 76
         mmio_write_32(0x03001180, 0x5); // I2C_SDA   PIN 77
 
         // SPI0
-        mmio_write_32(0x030011A4, 0x6); // SPI0_SCK   PIN 83
-        mmio_write_32(0x030011A8, 0x6); // SPI0_CS    PIN 84
-        mmio_write_32(0x030011AC, 0x6); // SPI0_MOSI  PIN 85
-        mmio_write_32(0x030011B0, 0x6); // SPI0_MISO  PIN 86
+        // mmio_write_32(0x030011A4, 0x6); // SPI0_SCK   PIN 83
+        // mmio_write_32(0x030011A8, 0x6); // SPI0_CS    PIN 84
+        // mmio_write_32(0x030011AC, 0x6); // SPI0_MOSI  PIN 85
+        // mmio_write_32(0x030011B0, 0x6); // SPI0_MISO  PIN 86
 
         // PWM
        	mmio_write_32(0x030010ac, 0x4); // PWRGPIO 2 PWM 10
@@ -177,8 +183,8 @@ int cvi_board_init(void)
         // SPD3  PIN75， GPIOC5，默认gpio
 
         // PWR_EN
-        mmio_write_32(0x03001170, 0x3); // PIN73, GPIOC3
-
+        // mmio_write_32(0x03001170, 0x3); // PIN73, GPIOC3
+        // PIN84默认GPIO
 
         // PLUG_HASH PIN87, GPIOC12, 默认gpio
         // CFG_HAHSH PIN88, GPIOC13, 默认gpio

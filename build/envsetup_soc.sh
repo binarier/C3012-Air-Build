@@ -876,7 +876,8 @@ function cvi_setup_env()
   # buildroot config
   export BR_DIR="$TOP_DIR"/buildroot
   export BR_BOARD=cvitek_${CHIP_ARCH}_${SDK_VER}
-  export BR_OVERLAY_DIR=${BR_DIR}/board/cvitek/${CHIP_ARCH}/overlay
+  #export BR_OVERLAY_DIR=${BR_DIR}/board/cvitek/${CHIP_ARCH}/overlay
+  export BR_OVERLAY_DIR=${BR_DIR}/board/air//overlay
   export BR_DEFCONFIG=${BR_BOARD}_defconfig
   echo "BR2_DEFCONFIG:  ${BRDEFCONFIG}"
 }
