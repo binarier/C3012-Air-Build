@@ -54,7 +54,7 @@
         /delete-property/ pwm-gpio;
 #endif
         /delete-property/ power-ct-gpio;
-        status = "okay";
+        status = "disabled";
 };
 
 &uart0 {
@@ -182,6 +182,7 @@
 };
 
 &mipi_rx {
+        status = "disabled";
         snsr-reset = <&porte 1 GPIO_ACTIVE_LOW>;
 };
 

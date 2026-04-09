@@ -221,6 +221,23 @@
 			gpios = <&porta 14 GPIO_ACTIVE_HIGH>;
 			linux,default-trigger = "activity";
 		};
+
+                ctrl_led_green {
+                        // 绿灯，PWR_GPIO1, PIN48
+                        gpios = <&porte 1 GPIO_ACTIVE_HIGH>;
+                        linux,default-trigger = "heartbeat";
+                }
+                ctrl_led_red {
+                        // 红灯，PWR_GPIO2, PIN49
+                        gpios = <&porte 2 GPIO_ACTIVE_HIGH>;
+                        linux,default-trigger = "heartbeat";
+                }
+
+                hash_led {
+                        // hash 板灯，GPIOA_15, PIN17
+                        gpios = <&porta 15 GPIO_ACTIVE_HIGH>;
+                        linux,default-trigger = "heartbeat";
+                }
 	};
 
 	// buggy pwm driver, not working, please use userspace pwm api
