@@ -174,16 +174,24 @@ int cvi_board_init(void)
         // mmio_write_32(0x030011AC, 0x6); // SPI0_MOSI  PIN 85
         // mmio_write_32(0x030011B0, 0x6); // SPI0_MISO  PIN 86
 
-        // PWM
-       	mmio_write_32(0x030010ac, 0x4); // PWRGPIO 2 PWM 10
+        // PWM，用于调压
+       	mmio_write_32(0x030010a4, 0x4); // PWRGPIO 0 PWM 8
+
+        // LAN LED Y
+       	mmio_write_32(0x030010a8, 0x3); // PIN48, PWR_GPIO1
+        // LAN LED G
+       	mmio_write_32(0x030010ac, 0x3); // PIN49, PWR_GPIO2
+
 
         // FAN SPEED
         // SPD1  PIN79， GPIOC9，默认gpio
         // SPD2  PIN74， GPIOC4，默认gpio
         // SPD3  PIN75， GPIOC5，默认gpio
 
-        // PWR_EN
-        // mmio_write_32(0x03001170, 0x3); // PIN73, GPIOC3
+        // FAN PWM
+        // mmio_write_32(0x030011A4, 0x3);
+
+        // PWR_EN PIN84, GPIOC17
         // PIN84默认GPIO
 
         // PLUG_HASH PIN87, GPIOC12, 默认gpio
