@@ -875,9 +875,10 @@ function cvi_setup_env()
   export CROSS_COMPILE_PATH
   # buildroot config
   export BR_DIR="$TOP_DIR"/buildroot
-  export BR_BOARD=cvitek_${CHIP_ARCH}_${SDK_VER}
+  # export BR_BOARD=cvitek_${CHIP_ARCH}_${SDK_VER}
   #export BR_OVERLAY_DIR=${BR_DIR}/board/cvitek/${CHIP_ARCH}/overlay
-  export BR_OVERLAY_DIR=${BR_DIR}/board/air//overlay
+  export BR_BOARD=sg2002_c3012_air_sd
+  export BR_OVERLAY_DIR=${BR_DIR}/board/air/overlay
   export BR_DEFCONFIG=${BR_BOARD}_defconfig
   echo "BR2_DEFCONFIG:  ${BRDEFCONFIG}"
 }
