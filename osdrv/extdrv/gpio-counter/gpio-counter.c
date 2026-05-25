@@ -120,9 +120,9 @@ static bool gpio_counter_get_state(const struct gpio_counter_struct *counter)
 
 static s64 gpio_counter_get_time_nsec(void)
 {
-	struct timespec ts;
-	getnstimeofday (&ts);
-	return timespec_to_ns(&ts);
+	struct timespec64 ts;
+	ktime_get_ts64(&ts);
+	return timespec64_to_ns(&ts);
 }
 
 #if 0
