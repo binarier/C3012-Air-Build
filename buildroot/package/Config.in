@@ -2815,6 +2815,10 @@ menu "Sipeed"
 endmenu
 
 menu "Mining"
+config BR2_PACKAGE_CLOVER_SOURCE_PATH
+	string "Clover submodules path"
+	default "$(BR2_EXTERNAL_BUILDROOT_SUBMODULE_PATH)/projects"
+
 	source "package/cgminer/Config.in"
 	source "package/gpio-counter/Config.in"
 endmenu
