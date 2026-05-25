@@ -188,11 +188,11 @@ int cvi_board_init(void)
         // SPD2  PIN74， GPIOC4，默认gpio
         // SPD3  PIN75， GPIOC5，默认gpio
 
-        // FAN PWM
-        // mmio_write_32(0x030011A4, 0x3);
+        // FAN PWM, PIN84, PWM9
+        mmio_write_32(0x030011A8, 0x5);
 
-        // PWR_EN PIN84, GPIOC17
-        // PIN84默认GPIO
+        // PWR_EN PIN83, GPIOC16
+        // PIN83默认GPIO
 
         // PLUG_HASH PIN87, GPIOC12, 默认gpio
         // CFG_HAHSH PIN88, GPIOC13, 默认gpio
