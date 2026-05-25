@@ -49,7 +49,7 @@ exclude_dirs = ./interdrv/v1/include ./interdrv/v2/include
 SUBDIRS := $(filter-out $(exclude_dirs), $(SUBDIRS))
 
 # prepare ko list
-KO_LIST = base vcodec jpeg pwm rtc wdt tpu mon clock_cooling saradc wiegand wiegand-gpio
+KO_LIST = base vcodec jpeg pwm rtc wdt tpu mon clock_cooling saradc wiegand wiegand-gpio gpio-counter
 
 ifneq ($(CONFIG_USB_OSDRV_CVITEK_GADGET),)
 KO_LIST += usb
@@ -198,6 +198,9 @@ wiegand-gpio:
 	@$(call MAKE_EXT_KO, extdrv/${@})
 
 gyro_i2c:
+	@$(call MAKE_EXT_KO, extdrv/${@})
+
+gpio-counter:
 	@$(call MAKE_EXT_KO, extdrv/${@})
 
 cp_ext_wireless:
