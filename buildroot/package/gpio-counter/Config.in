@@ -1,0 +1,6 @@
+config BR2_PACKAGE_GPIO_COUNTER
+	bool "gpio-counter"
+	help
+	  Generic GPIO impulse counter. Counts impulses using GPIO interrupts.
+	  Can be activated on low or high level. If needed, a debounce
+	  procedure can be performed.

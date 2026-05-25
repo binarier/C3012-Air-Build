@@ -2814,6 +2814,9 @@ menu "Sipeed"
 	source "package/gb-test-roms/Config.in"
 endmenu
 
-
+menu "Mining"
+	source "package/cgminer/Config.in"
+	source "package/gpio-counter/Config.in"
+endmenu
 
 endmenu
