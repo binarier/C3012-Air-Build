@@ -4,8 +4,8 @@
 #
 ################################################################################
 CGMINER_VERSION = $(call qstrip,$(BR2_PACKAGE_CGMINER_VERSION))
-CGMINER_SITE_METHOD = local
-CGMINER_SITE = $(BR2_PACKAGE_CLOVER_SOURCE_PATH)/cgminer
+CGMINER_SITE_METHOD = git
+CGMINER_SITE = git@git.highsharp.com:highsharp/cgminer.git
 CGMINER_DEPENDENCIES = host-pkgconf jansson libcurl
 CGMINER_AUTORECONF = YES
 CGMINER_CONF_OPTS = --enable-clover-rust --with-system-jansson 
