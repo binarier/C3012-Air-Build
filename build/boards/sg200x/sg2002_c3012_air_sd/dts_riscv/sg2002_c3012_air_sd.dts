@@ -32,7 +32,7 @@
 };
 
 &cvi_vo {
-        /* status = "disabled"; */
+        status = "disabled";
 #ifndef __UBOOT__
 	/delete-property/ reset-gpio;
 	/delete-property/ pwm-gpio;
