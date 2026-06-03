@@ -12,7 +12,3 @@ config BR2_PACKAGE_CGMINER_VERSION
 	string "cgminer version string"
 	default "4.10.0"
 
-config BR2_PACKAGE_CGMINER_FPGA
-	depends on BR2_PACKAGE_CGMINER
-	bool "use FPGA chip"
-	default false
